@@ -1,2 +1,16 @@
-h1 Welcome#index
-p Find me in app/views/welcome/index.html.slim
+- @articles.each do |article|
+  .article
+    h3.article-title
+      a href=article.source_url target="_blank"
+        = article.title
+      span
+        a.article-source-name href=article.source_url target="_blank"
+          | (#{article.source_name})
+    .article-meta
+      span 更新于 #{article.updated_at}
+      span |
+      span discuss
+      span |
+      span
+        | (TBD)social button
+

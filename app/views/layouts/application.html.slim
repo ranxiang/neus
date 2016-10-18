@@ -1,6 +1,9 @@
 doctype html
-html
+html lang="zh-cn"
   head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
     title Neus
     = csrf_meta_tags
 
@@ -8,4 +11,18 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    = yield
+    nav.news-navbar.navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          a.navbar-brand href="#" Neus
+        #navbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a href="#" News
+            li
+              a href="#" Comments
+    .container
+      = yield
+    footer.news-footer.footer
+      .container
+        p.text-muted Copyright © 2016 Ran Xiang

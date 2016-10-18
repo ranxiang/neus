@@ -52,3 +52,7 @@ gem "slim-rails"
 
 # add bootstrap-sass for view.
 gem 'bootstrap-sass', '~> 3.3.6'
+
+group :development, :test do
+  gem 'rb-readline'
+end
