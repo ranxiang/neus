@@ -49,3 +49,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # add slim-rails gem for view.
 gem "slim-rails"
+
+# add bootstrap-sass for view.
+gem 'bootstrap-sass', '~> 3.3.6'
