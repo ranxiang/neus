@@ -14,14 +14,33 @@ html lang="zh-cn"
     nav.news-navbar.navbar.navbar-default.navbar-fixed-top
       .container
         .navbar-header
-          a.navbar-brand href="#" Neus
+          a.navbar-brand href=root_url Neus
         #navbar.collapse.navbar-collapse
           ul.nav.navbar-nav
             li.active
               a href="#" News
             li
               a href="#" Comments
+          ul.nav.navbar-nav.navbar-right
+            - if user_signed_in?
+              li
+                = link_to "Sign Out", destroy_user_session_url, method: :delete
+            - else
+              li
+                a href=new_user_registration_url Sign Up
+              li
+                a href=new_user_session_url Sign In
     .container
+      - if notice
+        .alert.alert-success.alert-dismissible role="alert"
+          button.close type="button" data-dismiss="alert" aria-label="Close"
+            span aria-hidden="true" &times;
+          = notice
+      - if alert
+        .alert.alert-danger.alert-dismissible role="alert"
+          button.close type="button" data-dismiss="alert" aria-label="Close"
+            span aria-hidden="true" &times;
+          = alert
       = yield
     footer.news-footer.footer
       .container
