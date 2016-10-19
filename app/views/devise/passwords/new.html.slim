@@ -1,0 +1,19 @@
+ol.breadcrumb
+ li
+    = link_to "Neus", root_url
+ li.active
+  = t(:forgot_your_password)
+
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "form-horizontal" }) do |f|
+  = devise_error_messages!
+
+  .form-group
+    = f.label :email, class: "col-sm-2 control-label", for: "inputEmail3"
+    .col-sm-3
+      = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email"
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit t(:resend), class: "btn btn-primary"
+
+= render "devise/shared/links"

@@ -18,18 +18,18 @@ html lang="zh-cn"
         #navbar.collapse.navbar-collapse
           ul.nav.navbar-nav
             li.active
-              a href="#" News
+              = link_to t(:news), root_url
             li
-              a href="#" Comments
+              = link_to t(:comment), "#"
           ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               li
-                = link_to "Sign Out", destroy_user_session_url, method: :delete
+                = link_to current_user.email, edit_user_registration_url
+              li
+                = link_to t(:logout), destroy_user_session_url, method: :delete
             - else
               li
-                a href=new_user_registration_url Sign Up
-              li
-                a href=new_user_session_url Sign In
+                = link_to t(:login), new_user_session_url
     .container
       - if notice
         .alert.alert-success.alert-dismissible role="alert"
