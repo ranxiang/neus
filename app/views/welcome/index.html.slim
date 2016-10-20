@@ -18,6 +18,11 @@
         span
           a href=article_comments_url(article_id: article)
             = t(:comments)
+            |
+              (
+            = article.comments.size
+            |
+             )
         span |
         span
           | (TBD)social button
