@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :votes
   has_many :articles, :through => :votes
+
+  validates :name, uniqueness: true
+  validates :name, length: { in: 3..16 }
 end

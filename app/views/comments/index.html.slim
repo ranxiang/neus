@@ -46,6 +46,6 @@
     - if comment.persisted?
       .comment.panel.panel-info
         .panel-heading
-          = comment.user.try(:email)
+          = comment.user.name
         .panel-body
           = comment.body

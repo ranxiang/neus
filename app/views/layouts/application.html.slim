@@ -24,7 +24,7 @@ html lang="zh-cn"
           ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               li
-                = link_to current_user.email, edit_user_registration_url
+                = link_to current_user.name, edit_user_registration_url
               li
                 = link_to t(:logout), destroy_user_session_url, method: :delete
             - else

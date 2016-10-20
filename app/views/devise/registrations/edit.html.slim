@@ -8,26 +8,31 @@ ol.breadcrumb
   = devise_error_messages!
 
   .form-group
-    = f.label :email, class: "col-sm-2 control-label", for: "inputEmail3"
+    = f.label :name, class: "col-sm-2 control-label", for: "user_name"
     .col-sm-3
-      = f.email_field :email, autofocus: true, class: "form-control"
+      = f.text_field :name, autofocus: true, class: "form-control", placeholder: "Name"
+
+  .form-group
+    = f.label :email, class: "col-sm-2 control-label", for: "user_email"
+    .col-sm-3
+      = f.email_field :email, class: "form-control"
 
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div
       | Currently waiting confirmation for: #{resource.unconfirmed_email}
 
   .form-group
-    = f.label :password, class: "col-sm-2 control-label", for: "inputPassword3"
+    = f.label :password, class: "col-sm-2 control-label", for: "user_password"
     .col-sm-3
       = f.password_field :password, autocomplete: "off", class: "form-control"
 
   .form-group
-    = f.label :password_confirmation, class: "col-sm-2 control-label", for: "inputPasswordConfirmation3"
+    = f.label :password_confirmation, class: "col-sm-2 control-label", for: "user_password_confirmation"
     .col-sm-3
       = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
 
   .form-group
-    = f.label :current_password, class: "col-sm-2 control-label", for: "inputPassword3"
+    = f.label :current_password, class: "col-sm-2 control-label", for: "user_current_password"
     .col-sm-3
       = f.password_field :current_password, autocomplete: "off", class: "form-control"
 

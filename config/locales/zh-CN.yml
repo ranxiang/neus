@@ -25,6 +25,7 @@ zh-CN:
       user: "用户"
     attributes:
       user:
+        name: "用户名"
         email: "邮箱"
         password: "密码"
         password_confirmation: "重复确认密码"
@@ -36,11 +37,20 @@ zh-CN:
       models:
         user:
           attributes:
+            name:
+              too_short: "太短,不符合长度要求(3到16个字符以内)"
+              too_long: "太长,不符合长度要求(3到16个字符以内)"
             email:
               taken: "已被注册"
+              blank: "不能为空"
             password:
               blank: "不能为空"
-              too_short: "太短,不符合长度要求"
+              too_short: "太短,不符合长度要求(6到32个字符以内)"
+              too_long: "太长,不符合长度要求(6到32个字符以内)"
+            current_password:
+              blank: "不能为空"
+              too_short: "太短,不符合长度要求(6到32个字符以内)"
+              too_long: "太长,不符合长度要求(6到32个字符以内)"
             password_confirmation:
               confirmation: "和之前不一致"
         comment:
