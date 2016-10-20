@@ -1,7 +1,15 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
   before_action :authenticate_admin_user!
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :go]
+  skip_before_action :authenticate_user!, only: [:go]
+  skip_before_action :authenticate_admin_user!, only: [:go]
+
+  def go
+    @article.pv = @article.pv + 1
+    @article.save!
+    redirect_to @article.source_url
+  end
 
   # GET /articles
   # GET /articles.json
