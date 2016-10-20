@@ -35,12 +35,14 @@ html lang="zh-cn"
         .alert.alert-success.alert-dismissible role="alert"
           button.close type="button" data-dismiss="alert" aria-label="Close"
             span aria-hidden="true" &times;
-          = notice
+          center
+            = notice
       - if alert
         .alert.alert-danger.alert-dismissible role="alert"
           button.close type="button" data-dismiss="alert" aria-label="Close"
             span aria-hidden="true" &times;
-          = alert
+          center
+            = alert
       = yield
     footer.news-footer.footer
       .container

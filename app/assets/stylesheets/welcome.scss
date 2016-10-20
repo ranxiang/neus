@@ -6,7 +6,6 @@ body {
 }
 
 .footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -45,6 +44,10 @@ body {
   color: #999;
 }
 
+.article-meta a {
+  color: #999;
+}
+
 .article-meta span {
   margin-right: 5px;
 }
@@ -59,3 +62,9 @@ body {
  color: blue;
 }
 
+
+.comments {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}

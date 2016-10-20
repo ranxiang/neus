@@ -1,0 +1,51 @@
+- article = @article
+.article
+  h3.article-title
+    a.vote_link href=votes_url(format: :json) article_id=article.id
+      - if article.voted_by_user?(current_user)
+        span.voted.vote-icon.glyphicon.glyphicon-arrow-up aria-hidden="true"
+      - else
+        span.vote-icon.glyphicon.glyphicon-arrow-up aria-hidden="true"
+    a href=article.source_url target="_blank"
+      = article.title
+    span
+      a.article-source-name href=article.source_url target="_blank"
+        | (#{article.source_name})
+  .article-meta
+    span 更新于 #{article.updated_at}
+    span |
+    span
+      a href=article_comments_url(article_id: article)
+        = t(:comments)
+    span |
+    span
+      | (TBD)social button
+  .article-summary
+    p
+      = article.summary
+
+- if allow_comment?
+  = form_for @comment, url: article_comments_path(article_id: @article) do |f|
+    - if @comment.errors.any?
+      #error_explanation.alert.alert-danger.alert-dismissible role="alert"
+        button.close type="button" data-dismiss="alert" aria-label="Close"
+          span aria-hidden="true" &times;
+        ul
+          - @comment.errors.full_messages.each do |message|
+            li = message
+    = f.hidden_field :article_id, value: @article.id
+    .form-group
+      = f.text_area :body, class: "form-control", rows: 3
+    = f.submit t(:create_comment), class: "btn btn-primary"
+- else
+  .alert.alert-warning role="alert"
+    = t(:please_login_to_comment)
+
+.comments
+  - @comments.each do |comment|
+    - if comment.persisted?
+      .comment.panel.panel-info
+        .panel-heading
+          = comment.user.try(:email)
+        .panel-body
+          = comment.body

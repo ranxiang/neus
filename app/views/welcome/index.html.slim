@@ -15,7 +15,9 @@
       .article-meta
         span 更新于 #{article.updated_at}
         span |
-        span discuss
+        span
+          a href=article_comments_url(article_id: article)
+            = t(:comments)
         span |
         span
           | (TBD)social button
