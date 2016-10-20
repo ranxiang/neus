@@ -1,16 +1,22 @@
-- @articles.each do |article|
-  .article
-    h3.article-title
-      a href=article.source_url target="_blank"
-        = article.title
-      span
-        a.article-source-name href=article.source_url target="_blank"
-          | (#{article.source_name})
-    .article-meta
-      span 更新于 #{article.updated_at}
-      span |
-      span discuss
-      span |
-      span
-        | (TBD)social button
+.articles
+  - @articles.each do |article|
+    .article
+      h3.article-title
+        a.vote_link href=votes_url(format: :json) article_id=article.id
+          - if article.voted_by_user?(current_user)
+            span.voted.vote-icon.glyphicon.glyphicon-arrow-up aria-hidden="true"
+          - else
+            span.vote-icon.glyphicon.glyphicon-arrow-up aria-hidden="true"
+        a href=article.source_url target="_blank"
+          = article.title
+        span
+          a.article-source-name href=article.source_url target="_blank"
+            | (#{article.source_name})
+      .article-meta
+        span 更新于 #{article.updated_at}
+        span |
+        span discuss
+        span |
+        span
+          | (TBD)social button
 
