@@ -56,6 +56,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "neus_#{Rails.env}"
   config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.default_url_options = {from: 'no-reply@xneus.com', host: 'xneus.com', port: 80}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.perform_caching = false
 
