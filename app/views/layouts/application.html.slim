@@ -9,6 +9,7 @@ html lang="zh-cn"
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = auto_discovery_link_tag(:rss, root_url)
 
   body
     nav.news-navbar.navbar.navbar-default.navbar-fixed-top
