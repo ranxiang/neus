@@ -5,7 +5,7 @@ html lang="zh-cn"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     meta name="viewport" content="width=device-width, initial-scale=1"
     title
-      = t(:project_name)
+      = t(:html_head_title)
     = csrf_meta_tags
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -21,9 +21,7 @@ html lang="zh-cn"
         #navbar.collapse.navbar-collapse
           ul.nav.navbar-nav
             li.active
-              = link_to t(:news), root_url
-            li
-              = link_to t(:comment), "#"
+              = link_to t(:root_page), root_url
           ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               li
@@ -49,4 +47,10 @@ html lang="zh-cn"
       = yield
     footer.news-footer.footer
       .container
-        p.text-muted Copyright © 2016 Ran Xiang
+        .text-muted
+          | Copyright © 2016
+          span XNeus
+          | | Powered by
+          a href="https://github.com/ranxiang/neus" target="_blank" Neus
+          | | Created by
+          a href="https://ranxiang.com" target="_blank" Ran Xiang
