@@ -30,6 +30,7 @@
       = article.summary
 
 - if allow_comment?
+  - @comment = @comments.new
   = form_for @comment, url: article_comments_path(article_id: @article) do |f|
     - if @comment.errors.any?
       #error_explanation.alert.alert-danger.alert-dismissible role="alert"
