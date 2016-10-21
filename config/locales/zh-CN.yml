@@ -1,4 +1,5 @@
 zh-CN:
+  project_name: "X Neus"
   hello: "你好"
   news: "新闻"
   comment: "评论"
@@ -6,8 +7,12 @@ zh-CN:
   login: "登录"
   sign_up: "注册"
   edit_user: "编辑账户信息"
+  edit_password: "编辑账户密码"
+  new_password: "新的密码"
+  new_password_confirmation: "重复确认新的密码"
   update: "更新"
   cancel_my_account: "注销我的账户"
+  cancel_my_account_confirm: "确认注销此账户吗?"
   forgot_your_password: "忘记密码了?"
   back: "返回"
   didnt_receive_confirmation_instructions: "没有收到确认邮件?"
