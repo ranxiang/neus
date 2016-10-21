@@ -62,3 +62,6 @@ gem 'devise'
 
 # add kaminari gem for pagination support
 gem 'kaminari'
+
+# add js runtime
+gem "therubyracer"
