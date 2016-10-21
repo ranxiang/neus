@@ -76,3 +76,6 @@ gem "letter_opener", :group => :development
 
 # add better errors gem for debug
 gem "better_errors", :group => :development
+
+# send email when errors occur
+gem 'exception_notification'
