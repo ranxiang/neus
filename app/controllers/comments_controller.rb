@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = @article.comments.order(created_at: :desc)
+    @comment = Comment.new
   end
 
   # GET /comments/1

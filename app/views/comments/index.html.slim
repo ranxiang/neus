@@ -30,8 +30,7 @@
       = article.summary
 
 - if allow_comment?
-  - @comment = @comments.new
-  = form_for @comment, url: article_comments_path(article_id: @article) do |f|
+  = form_for @comment, url: article_comments_path(article_id: article) do |f|
     - if @comment.errors.any?
       #error_explanation.alert.alert-danger.alert-dismissible role="alert"
         button.close type="button" data-dismiss="alert" aria-label="Close"
@@ -39,7 +38,7 @@
         ul
           - @comment.errors.full_messages.each do |message|
             li = message
-    = f.hidden_field :article_id, value: @article.id
+    = f.hidden_field :article_id, value: article.id
     .form-group
       = f.text_area :body, class: "form-control", rows: 3
     = f.submit t(:create_comment), class: "btn btn-primary"
