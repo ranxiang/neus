@@ -59,3 +59,6 @@ end
 
 # add devise gem for user management.
 gem 'devise'
+
+# add kaminari gem for pagination support
+gem 'kaminari'
