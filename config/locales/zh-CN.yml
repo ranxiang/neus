@@ -45,6 +45,7 @@ zh-CN:
             name:
               too_short: "太短,不符合长度要求(3到16个字符以内)"
               too_long: "太长,不符合长度要求(3到16个字符以内)"
+              taken: "不可用,请输入新的用户名"
             email:
               taken: "已被注册"
               blank: "不能为空"
