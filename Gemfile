@@ -70,3 +70,6 @@ gem 'kaminari'
 
 # add js runtime
 gem "therubyracer"
+
+# add letter opener gem for mail preview in local development env
+gem "letter_opener", :group => :development
