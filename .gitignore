@@ -19,3 +19,7 @@
 # Ignore Vim temporary files
 *.swp
 *.swo
+
+* Ignore deploy production setting
+/config/deploy/*
+/config/deploy.rb
