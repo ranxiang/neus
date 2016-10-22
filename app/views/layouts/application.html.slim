@@ -31,6 +31,9 @@ html lang="zh-cn"
             - else
               li
                 = link_to t(:login), new_user_session_url
+            li
+              a href=feed_url
+                i.fa.fa-rss aria-hidden="true"
     .container
       - if notice
         .alert.alert-success.alert-dismissible role="alert"
@@ -54,6 +57,7 @@ html lang="zh-cn"
           a href="https://github.com/ranxiang/neus" target="_blank" Neus
           | | Created by
           a href="https://ranxiang.com" target="_blank" Ran Xiang
+
     - if Rails.application.secrets.analytics_code
       .analytics_code.hide
         script src=Rails.application.secrets.analytics_code language="JavaScript"

@@ -79,3 +79,6 @@ gem "better_errors", :group => :development
 
 # send email when errors occur
 gem 'exception_notification'
+
+# for usefule icons
+gem 'font-awesome-sass'
