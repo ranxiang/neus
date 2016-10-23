@@ -76,3 +76,15 @@ body {
   padding-top: 10px;
   border-top: 1px solid #eee;
 }
+
+$size: 16px;
+
+.social-share-button {
+  display: inline;
+  .ssb-icon {
+    margin-bottom: -3px;
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}

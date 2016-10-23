@@ -82,3 +82,5 @@ gem 'exception_notification'
 
 # for usefule icons
 gem 'font-awesome-sass'
+
+gem 'social-share-button'

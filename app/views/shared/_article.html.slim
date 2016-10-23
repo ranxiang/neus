@@ -1,0 +1,33 @@
+.article
+  h3.article-title
+    a.vote_link href=votes_url(format: :json) article_id=article.id
+      - if article.voted_by_user?(current_user)
+        span.voted.vote-icon.glyphicon.glyphicon-arrow-up aria-hidden="true"
+      - else
+        span.vote-icon.glyphicon.glyphicon-arrow-up aria-hidden="true"
+    a href=go_article_url(article) target="_blank"
+      = article.title
+    span
+      a.article-source-name href=article.source_url target="_blank"
+        | (#{article.source_name})
+  .article-meta
+    span 更新于 #{article.updated_at}
+    span |
+    span
+      a href=article.source_url target="_blank"
+        |原文链接
+    span |
+    span
+      a href=article_comments_url(article_id: article)
+        = t(:comments)
+        |
+          (
+        = article.comments.size
+        |
+         )
+    span |
+    = social_share_button_tag(title_for_share(article.title), url: article_comments_url(article_id: article))
+  - if show_summary == true
+    .article-summary
+      p
+        = article.summary
