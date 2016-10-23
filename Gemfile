@@ -83,4 +83,4 @@ gem 'exception_notification'
 # for usefule icons
 gem 'font-awesome-sass'
 
-gem 'social-share-button'
+gem 'social-share-button',:git => 'https://github.com/ranxiang/social-share-button.git'

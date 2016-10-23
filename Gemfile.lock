@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/ranxiang/social-share-button.git
+  revision: 4b970a551c8cd20dbef9daccf99330762731f548
+  specs:
+    social-share-button (0.8.0)
+      coffee-rails
+      sass-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -186,9 +194,6 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (~> 3.0)
-    social-share-button (0.8.0)
-      coffee-rails
-      sass-rails
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -255,7 +260,7 @@ DEPENDENCIES
   rb-readline
   sass-rails (~> 5.0)
   slim-rails
-  social-share-button
+  social-share-button!
   spring
   spring-watcher-listen (~> 2.0.0)
   therubyracer
