@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_article
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:create, :update, :destroy]
   before_action :authenticate_admin_user!, only: [:update, :destroy]
 
@@ -8,16 +8,6 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = @article.comments.order(created_at: :desc)
-    @comment = Comment.new
-  end
-
-  # GET /comments/1
-  # GET /comments/1.json
-  def show
-  end
-
-  # GET /comments/new
-  def new
     @comment = Comment.new
   end
 
