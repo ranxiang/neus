@@ -8,7 +8,7 @@
     a href=go_article_url(article) target="_blank"
       = article.title
     span
-      a.article-source-name href=article.source_url target="_blank"
+      a.article-source-name href=article.source_host_url target="_blank"
         | (#{article.source_name})
   .article-meta
     span 更新于 #{article.updated_at}
