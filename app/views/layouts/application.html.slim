@@ -20,8 +20,10 @@ html lang="zh-cn"
             = t(:project_name)
         #navbar.collapse.navbar-collapse
           ul.nav.navbar-nav
-            li.active
+            li class=('active' if current_page?(root_url))
               = link_to t(:root_page), root_url
+            li class=('active' if current_page?(new_article_url))
+              = link_to t(:new_article_page), new_article_url
           ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               li

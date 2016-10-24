@@ -1,7 +1,12 @@
 class Article < ApplicationRecord
+  belongs_to :creator, :class_name => "User", foreign_key: "user_id"
+
   has_many :comments
   has_many :votes
-  has_many :users, :through => :votes
+  has_many :voted_users, :class_name => "User", :through => :votes
+
+  validates :title, length: { in: 1..100 }
+  validates :source_url, :url => true
 
   def voted_by_user?(user)
     votes.where(user: user, deleted: false).exists?

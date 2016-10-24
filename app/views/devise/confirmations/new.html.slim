@@ -1,4 +1,4 @@
-== render partial: 'shared/user_breadcrumb', locals: {action: :resend_confirmation_instructions}
+== render partial: 'shared/navigation_breadcrumb', locals: {action: :resend_confirmation_instructions}
 
 = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: "form-horizontal" }) do |f|
   = devise_error_messages!

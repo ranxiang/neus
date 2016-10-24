@@ -25,11 +25,19 @@ zh-CN:
   create_comment: "追加评论"
   create_comment_success: "追加评论成功"
   please_login_to_comment: "登录后即可评论"
+  new_article_page: "投稿"
+  edit_article_page: "编辑文章"
+  submit: "提交"
+  create_article_success: "投稿成功"
+  update_article_success: "文章修改成功"
 
   activerecord:
     models:
       user: "用户"
     attributes:
+      article:
+        title: "标题"
+        source_url: "原文链接"
       user:
         name: "用户名"
         email: "邮箱"
@@ -41,6 +49,14 @@ zh-CN:
         body: "评论正文"
     errors:
       models:
+        article:
+          attributes:
+            title:
+              too_short: "不能为空"
+              too_long: "太长,不符合长度要求(100个字符以内)"
+            source_url:
+              blank: "不能为空"
+              url: "不是一个合法的URL"
         user:
           attributes:
             name:

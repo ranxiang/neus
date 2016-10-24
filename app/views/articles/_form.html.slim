@@ -1,18 +1,21 @@
-= form_for @article do |f|
+= form_for @article, html: {class: "form-horizontal"} do |f|
   - if @article.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
+    #error_explanation.alert.alert-danger.alert-dismissible role="alert"
+      button.close type="button" data-dismiss="alert" aria-label="Close"
+        span aria-hidden="true" &times;
       ul
         - @article.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :source_url
-    = f.text_field :source_url
-  .field
-    = f.label :summary
-    = f.text_area :summary
-  .actions = f.submit
+  .form-group
+    = f.label :title, class: "col-sm-2 control-label"
+    .col-sm-5
+      = f.text_field :title, class: "form-control"
+
+  .form-group
+    = f.label :source_url, class: "col-sm-2 control-label"
+    .col-sm-5
+      = f.text_field :source_url, class: "form-control"
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit t(:submit), class: "btn btn-primary"
