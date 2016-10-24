@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :votes
   has_many :articles, :through => :votes
 
-  validates :name, uniqueness: true
-  validates :name, length: { in: 3..16 }
+  validates :name, length: { in: 3..20 }
+  validates :name, uniqueness: { case_sensitive: false }
+  validates :name, format: { with: /\A[a-zA-Z0-9]+\z/}
 end
