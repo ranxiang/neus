@@ -20,4 +20,12 @@ class Article < ApplicationRecord
     uri = URI.parse(source_url)
     uri.scheme + "://" + uri.host
   end
+
+  def youtube_video?
+    source_name == 'youtube.com'
+  end
+
+  def youtube_embed_url
+    source_url.sub("watch?v=", "v/") + '?autoplay=1'
+  end
 end

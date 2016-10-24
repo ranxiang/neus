@@ -29,5 +29,8 @@
     = social_share_button_tag(title_for_share(article.title), url: article_comments_url(article_id: article))
   - if show_summary == true
     .article-summary
+      - if article.youtube_video?
+        .embed-responsive.embed-responsive-16by9
+          iframe.embed-responsive-item src=article.youtube_embed_url
       p
         = article.summary
