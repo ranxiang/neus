@@ -5,7 +5,7 @@ zh-CN:
   root_page: "首页"
   comment: "评论"
   logout: "登出"
-  login: "登录"
+  sign_in: "登录"
   sign_up: "注册"
   edit_user: "编辑账户信息"
   edit_password: "编辑账户密码"
