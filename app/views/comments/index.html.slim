@@ -18,7 +18,7 @@
     = t(:please_login_to_comment)
 
 .comments
-  - @comments.each do |comment|
+  - @article.comments.each do |comment|
     - if comment.persisted?
       .comment.panel.panel-info
         .panel-heading
