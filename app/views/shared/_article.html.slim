@@ -11,7 +11,7 @@
       a.article-source-name href=article.source_host_url target="_blank"
         | (#{article.source_name})
   .article-meta
-    span 更新于 #{article.updated_at}
+    span #{t(:updated_at)} #{article.updated_at}
     span |
     span
       a href=go_article_url(article) target="_blank"

@@ -34,6 +34,8 @@ zh-CN:
   destroy_comment_success: "评论成功删除"
   confirm_destory_comment: "确定删除此评论吗？(评论一经删除无法回复)"
   no_permission_hint: "抱歉，您没有权限进行此操作"
+  created_at: "发布于"
+  updated_at: "更新于"
 
   activerecord:
     models:
