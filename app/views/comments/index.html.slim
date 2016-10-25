@@ -19,9 +19,4 @@
 
 .comments
   - @article.comments.each do |comment|
-    - if comment.persisted?
-      .comment.panel.panel-info
-        .panel-heading
-          = comment.user.name
-        .panel-body
-          = comment.body
+    == render partial: 'comment', locals: {comment: comment}

@@ -30,6 +30,10 @@ zh-CN:
   submit: "提交"
   create_article_success: "投稿成功"
   update_article_success: "文章修改成功"
+  destroy: "删除"
+  destroy_comment_success: "评论成功删除"
+  confirm_destory_comment: "确定删除此评论吗？(评论一经删除无法回复)"
+  no_permission_hint: "抱歉，您没有权限进行此操作"
 
   activerecord:
     models:

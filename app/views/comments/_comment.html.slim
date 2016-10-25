@@ -1,0 +1,8 @@
+.comment.panel.panel-info
+  .panel-heading
+    = comment.user.name
+    - if current_user == comment.user
+      .pull-right
+        = link_to t(:destroy), article_comment_url(article_id: comment.article, id: comment), data: { confirm: t(:confirm_destory_comment) }, method: :delete
+  .panel-body
+    = comment.body

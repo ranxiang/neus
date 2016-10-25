@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_article
   before_action :set_comment, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:create, :update, :destroy]
-  before_action :authenticate_admin_user!, only: [:update, :destroy]
+  before_action :authenticate_current_user_for_destroy_comment!, only: [:update, :destroy]
 
   # GET /comments
   # GET /comments.json
@@ -50,7 +50,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to article_comments_url(article_id: @comment.article), notice: t(:destroy_comment_success) }
       format.json { head :no_content }
     end
   end
@@ -71,4 +71,9 @@ class CommentsController < ApplicationController
       comment_params[:user_id] = current_user.id
       comment_params
     end
+
+    def authenticate_current_user_for_destroy_comment!
+      return true if current_user && current_user.admin?
+      redirect_to article_comments_url(article_id: @comment.article), notice: t(:no_permission_hint) if current_user != @comment.user
+	end
 end
