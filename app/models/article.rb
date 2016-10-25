@@ -26,6 +26,6 @@ class Article < ApplicationRecord
   end
 
   def youtube_embed_url
-    source_url.sub("watch?v=", "v/") + '?autoplay=1'
+    source_url.sub("watch?v=", "embed/") + '?autoplay=1'
   end
 end
