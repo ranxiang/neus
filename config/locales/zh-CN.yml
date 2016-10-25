@@ -1,6 +1,6 @@
 zh-CN:
   project_name: "xNeus"
-  html_head_title: "xNeus - VR新闻 VR游戏 VR应用 最棒的VR资讯在这里"
+  default_head_title: "xNeus - 分享VR资讯 鼓励深度讨论"
   hello: "你好"
   root_page: "首页"
   comment: "评论"
@@ -37,6 +37,7 @@ zh-CN:
   created_at: "发布于"
   updated_at: "更新于"
   suffix_social_share: "（分享自 xNeus 社区 最棒的VR资讯在这里 快来参与讨论吧）"
+  about: "关于"
 
   activerecord:
     models:

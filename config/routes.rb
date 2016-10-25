@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'feed', to: 'feed#rss', :format => 'rss'
+  get 'about', to: 'welcome#about'
 
   resources :votes
   devise_for :users

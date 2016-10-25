@@ -5,7 +5,10 @@ html lang="zh-cn"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     meta name="viewport" content="width=device-width, initial-scale=1"
     title
-      = t(:html_head_title)
+      - if @article && @article.title.present?
+        = t(:project_name) + " | " + @article.title
+      - else
+        = t(:default_head_title)
     = csrf_meta_tags
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -24,6 +27,8 @@ html lang="zh-cn"
               = link_to t(:root_page), root_url
             li class=('active' if current_page?(new_article_url))
               = link_to t(:new_article_page), new_article_url
+            li class=('active' if current_page?(about_url))
+              = link_to t(:about), about_url
           ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               li
