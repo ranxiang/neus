@@ -36,6 +36,7 @@ zh-CN:
   no_permission_hint: "抱歉，您没有权限进行此操作"
   created_at: "发布于"
   updated_at: "更新于"
+  suffix_social_share: "（分享自 xNeus 社区 最棒的VR资讯在这里 快来参与讨论吧）"
 
   activerecord:
     models:
