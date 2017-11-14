@@ -61,14 +61,13 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "neus_#{Rails.env}"
 	config.action_mailer.delivery_method = :smtp
-	config.action_mailer.smtp_settings = {
-		port:                 25,
-		address:              Rails.application.secrets.smtp_address!,
-		user_name:            "no-reply@mail.xneus.com",
-		password:             Rails.application.secrets.smtp_password!,
-		enable_starttls_auto: false,
-		:openssl_verify_mode => 'none'  }
-	config.action_mailer.default_url_options = {from: 'no-reply@mail.xneus.com', host: 'xneus.com', port: 80}
+  config.action_mailer.smtp_settings = {
+    port:                 Rails.application.secrets.smtp_port!,
+    address:              Rails.application.secrets.smtp_address!,
+    user_name:            "no-reply@xneus.com",
+    password:             Rails.application.secrets.smtp_password!,
+    ssl:                  true }
+	config.action_mailer.default_url_options = {from: 'no-reply@xneus.com', host: 'xneus.com', port: 80}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.perform_caching = false
 

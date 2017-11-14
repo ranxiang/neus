@@ -20,8 +20,4 @@
 *.swp
 *.swo
 
-# Ignore deploy production setting
-/config/deploy/*
-/config/deploy.rb
-
 /public/assets
