@@ -46,11 +46,11 @@ role :db, [ENV['NEUS_DEPLOY_ROLE']]
 #
 # Global options
 # --------------
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
+set :ssh_options, {
+  port: ENV['NEUS_DEPLOY_SSH_PORT'] || 22
 #    forward_agent: false,
 #    auth_methods: %w(password)
-#  }
+}
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
