@@ -36,9 +36,13 @@ set :default_env, { rails_env: "production" }
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-set :rvm_ruby_version, 'ruby-2.4.2@neus'
+set :rvm_ruby_version, 'ruby-2.6.3@neus'
 
 set :nginx_server_name, ENV['NEUS_DEPLOY_NGINX_SERVER_NAME']
+
+set :nginx_ssl_certificate, ENV['NEUS_DEPLOY_NGINX_SSL_CERTIFICATE']
+
+set :nginx_ssl_certificate_key, ENV['NEUS_DEPLOY_NGINX_SSL_CERTIFICATE_KEY']
 
 set :nginx_use_ssl, true
 

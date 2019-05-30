@@ -1,6 +1,6 @@
 class CreateArticles < ActiveRecord::Migration[5.0]
   def change
-    create_table :articles, options: 'ROW_FORMAT=DYNAMIC' do |t|
+    create_table :articles do |t|
       t.string :title
       t.string :source_url
       t.string :source_name

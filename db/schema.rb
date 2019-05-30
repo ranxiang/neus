@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024071135) do
+ActiveRecord::Schema.define(version: 2016_10_24_071135) do
 
-  create_table "articles", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "articles", id: :serial, force: :cascade do |t|
     t.string "title"
     t.string "source_url"
     t.text "summary"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20161024071135) do
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
-  create_table "comments", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC" do |t|
+  create_table "comments", id: :serial, force: :cascade do |t|
     t.integer "user_id"
     t.integer "article_id"
     t.text "body"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 20161024071135) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "users", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC" do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -62,7 +65,7 @@ ActiveRecord::Schema.define(version: 20161024071135) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
-  create_table "votes", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC" do |t|
+  create_table "votes", id: :serial, force: :cascade do |t|
     t.integer "user_id"
     t.integer "article_id"
     t.datetime "created_at", null: false
