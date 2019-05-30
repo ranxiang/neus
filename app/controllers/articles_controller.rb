@@ -5,8 +5,7 @@ class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:go]
 
   def go
-    @article.pv = @article.pv + 1
-    @article.save!
+    @article.update_columns(pv: @article.pv + 1)
     redirect_to @article.source_url
   end
 
